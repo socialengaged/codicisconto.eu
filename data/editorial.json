@@ -17,7 +17,7 @@
       "topic": "Analisi promozioni Amazon di marzo",
       "sourceOfferIds": ["offer_amazon_1"],
       "sourceUrls": ["https://www.amazon.it/deals"],
-      "authorName": "Redazione codicisconto.eu",
+      "authorName": "Eugenio Tommasi",
       "publishedAt": "2026-03-10T09:00:00.000Z",
       "updatedAt": "2026-03-10T09:00:00.000Z"
     },
@@ -38,7 +38,7 @@
       "topic": "Guida ai coupon Amazon",
       "sourceOfferIds": ["offer_amazon_1"],
       "sourceUrls": ["https://www.amazon.it/deals"],
-      "authorName": "Redazione codicisconto.eu",
+      "authorName": "Eugenio Tommasi",
       "publishedAt": "2026-03-10T10:30:00.000Z",
       "updatedAt": "2026-03-10T10:30:00.000Z"
     },
@@ -59,7 +59,7 @@
       "topic": "Trend offerte casa",
       "sourceOfferIds": ["offer_marketplace_1", "offer_amazon_1"],
       "sourceUrls": ["https://example-store.test/offers/led", "https://www.amazon.it/deals"],
-      "authorName": "Redazione codicisconto.eu",
+      "authorName": "Eugenio Tommasi",
       "publishedAt": "2026-03-10T11:00:00.000Z",
       "updatedAt": "2026-03-10T11:00:00.000Z"
     }

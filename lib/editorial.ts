@@ -1,6 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { unstable_noStore as noStore } from "next/cache";
+import { SITE_AUTHOR_NAME } from "@/lib/seo";
 import type { EditorialArticle, EditorialArticleType, EditorialStore, OfferView } from "@/lib/types";
 import { getPublishedOffers } from "@/lib/store";
 import { slugify } from "@/lib/utils";
@@ -22,6 +23,10 @@ export async function getPublishedArticles(type?: EditorialArticleType): Promise
   const articles = store.articles
     .filter((article) => article.status === "published")
     .filter((article) => (type ? article.type === type : true))
+    .map((article) => ({
+      ...article,
+      authorName: article.authorName || SITE_AUTHOR_NAME
+    }))
     .sort((left, right) => new Date(right.publishedAt).getTime() - new Date(left.publishedAt).getTime());
 
   return articles;
@@ -85,7 +90,7 @@ export async function buildArticleDraftFromOffers(input: {
     topic: input.topic,
     sourceOfferIds: selectedOffers.map((offer) => offer.id),
     sourceUrls: selectedOffers.map((offer) => offer.destinationUrl),
-    authorName: "AI Editorial Assistant",
+    authorName: SITE_AUTHOR_NAME,
     publishedAt: now,
     updatedAt: now
   };

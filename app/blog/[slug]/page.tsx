@@ -4,7 +4,15 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/lib/editorial";
 import { getExternalLinkRel } from "@/lib/link-rel";
-import { absoluteUrl, articleSchema, breadcrumbSchema } from "@/lib/seo";
+import {
+  absoluteUrl,
+  articleSchema,
+  breadcrumbSchema,
+  SITE_AUTHOR_NAME,
+  SITE_AUTHOR_REFERENCE_LINKS,
+  SITE_AUTHOR_URL,
+  SITE_NAME
+} from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
 
 interface BlogArticlePageProps {
@@ -23,6 +31,9 @@ export async function generateMetadata({ params }: BlogArticlePageProps): Promis
     title: article.title,
     description: article.excerpt,
     keywords: article.tags,
+    authors: [{ name: SITE_AUTHOR_NAME, url: SITE_AUTHOR_URL }],
+    creator: SITE_AUTHOR_NAME,
+    publisher: SITE_NAME,
     alternates: {
       canonical: `/blog/${article.slug}`
     },
@@ -32,6 +43,9 @@ export async function generateMetadata({ params }: BlogArticlePageProps): Promis
       description: article.excerpt,
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt,
+      authors: [SITE_AUTHOR_NAME],
+      section: article.topic,
+      tags: article.tags,
       url: absoluteUrl(`/blog/${article.slug}`),
       images: [absoluteUrl(article.coverImage)]
     },
@@ -78,6 +92,20 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
               {tag}
             </span>
           ))}
+        </div>
+        <div className="card author-box">
+          <h2>Autore</h2>
+          <p>
+            Contenuto firmato da <strong>{SITE_AUTHOR_NAME}</strong>, consulente SEO e fondatore di progetti dedicati a
+            search marketing, contenuti e crescita organica.
+          </p>
+          <div className="stack">
+            {SITE_AUTHOR_REFERENCE_LINKS.map((item) => (
+              <a key={item.url} href={item.url} className="button button-secondary" target="_blank" rel={getExternalLinkRel({ nofollow: false })}>
+                {item.label}
+              </a>
+            ))}
+          </div>
         </div>
         <div className="article-body">
           {article.content.map((paragraph) => (

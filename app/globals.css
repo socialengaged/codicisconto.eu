@@ -403,6 +403,16 @@ th {
   line-height: 1.75;
 }
 
+.author-box {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 820px;
+}
+
+.author-box p {
+  margin: 0;
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .admin-layout,
@@ -425,5 +435,11 @@ th {
 
   .hero-card {
     padding: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .article-shell {
+    padding: 1.25rem;
   }
 }

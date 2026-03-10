@@ -2,7 +2,18 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { JsonLd } from "@/components/json-ld";
 import { SiteHeader } from "@/components/site-header";
-import { DEFAULT_OG_IMAGE, SITE_DESCRIPTION, SITE_LOCALE, SITE_NAME, organizationSchema, siteKeywords, websiteSchema } from "@/lib/seo";
+import {
+  DEFAULT_OG_IMAGE,
+  SITE_AUTHOR_NAME,
+  SITE_AUTHOR_URL,
+  SITE_DESCRIPTION,
+  SITE_LOCALE,
+  SITE_NAME,
+  organizationSchema,
+  personSchema,
+  siteKeywords,
+  websiteSchema
+} from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.SITE_URL || "http://localhost:3000"),
@@ -14,9 +25,10 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   keywords: siteKeywords(),
   category: "shopping",
-  authors: [{ name: "Redazione codicisconto.eu" }],
+  authors: [{ name: SITE_AUTHOR_NAME, url: SITE_AUTHOR_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
+  referrer: "origin-when-cross-origin",
   formatDetection: {
     email: false,
     address: false,
@@ -70,7 +82,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="it">
       <body>
-        <JsonLd data={[organizationSchema(), websiteSchema()]} />
+        <JsonLd data={[organizationSchema(), personSchema(), websiteSchema()]} />
         <SiteHeader />
         <main>{children}</main>
         <footer className="footer">

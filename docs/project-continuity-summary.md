@@ -209,6 +209,60 @@ Situazione attesa in produzione:
 - `lib/editorial-ai.ts`
 - `docs/seo-editorial-workflow.md`
 
+## Audit SEO, Discover e mobile-first
+
+### Stato audit aggiornato
+
+- markup JSON-LD presente su homepage, store, category, coupon, news e blog
+- breadcrumb strutturate presenti anche lato schema sulle pagine chiave
+- ricerca interna ora ha metadata dinamici, canonical e `CollectionPage` dedicata
+- store e category hanno keyword piu ricche derivate da merchant e tassonomia reale
+- pagine `news` e `blog` mostrano ora un box autore visibile con riferimenti pubblici a `Eugenio Tommasi`
+- entity autore/publisher consolidata con `sameAs` verso `socialengagement.it`, `seo.srl` e `LinkedIn`
+- link autore pubblici non vengono marcati `nofollow`, mentre affiliate/source link mantengono i `rel` SEO-safe previsti
+
+### Discover / E-E-A-T
+
+Miglioramenti gia applicati:
+
+- autore visibile e coerente tra metadata, JSON-LD e contenuto renderizzato
+- `Person` + `Organization` nel layout root
+- publisher e founder espliciti nello schema
+- articoli firmati in modo uniforme con `Eugenio Tommasi`
+
+Check ancora da fare manualmente sul live:
+
+- validare 3-5 URL su Rich Results Test
+- controllare lunghezza/qualita dei titoli editoriali futuri
+- verificare che le cover editoriali usate per Discover abbiano almeno larghezza adeguata e qualità alta
+
+### Web Vitals / performance
+
+Situazione attuale:
+
+- immagini offerta servite con `next/image`
+- immagini remote abilitate con `remotePatterns`
+- layout responsive solido senza overflow noto nei principali template
+- ridotta la pressione SEO/UX sui link esterni tramite CTA piu pulite verso merchant ufficiali
+
+Limite attuale dell'audit:
+
+- il recupero diretto dei dati PageSpeed Insights/CWV live non e stato affidabile durante questo giro per limiti quota esterni (`429`)
+- quindi l'audit CWV e stato chiuso a livello tecnico/codice, non come misurazione definitiva RUM/CrUX
+
+### Mobile-first
+
+Stato corrente:
+
+- sito usabile e responsive su viewport stretti
+- aggiustato anche il padding degli articoli su schermi piccoli
+- header e griglie collassano correttamente sotto `900px`
+
+Gap residui:
+
+- manca ancora un vero menu hamburger
+- sarebbe utile una rifinitura tablet dedicata con breakpoint intermedio
+
 ## Problemi ancora aperti
 
 ### 1. Mobile navigation
@@ -227,17 +281,18 @@ Possibili prossimi miglioramenti:
 - eventuale caching locale delle immagini ufficiali recuperate
 - eventuale caching dei contenuti importati
 - ulteriore rifinitura dei titoli `Offerta` troppo generici per alcuni item Amazon splittati
+- misurazione reale CWV con PageSpeed/Lighthouse appena disponibile quota o ambiente adatto
 
 ## Prossimi step consigliati
 
 ### Priorita alta
 
-1. Aggiungere immagini prodotto alle offerte Amazon Telegram
-2. Distinguere meglio in homepage:
+1. Distinguere meglio in homepage:
    - coupon con codice
    - offerte prodotto
    - promozioni merchant
-3. Rafforzare category hub e link interni tra categorie affini
+2. Rafforzare category hub e link interni tra categorie affini
+3. Fare una sessione dedicata di validazione live su Rich Results Test + Search Console + PageSpeed
 
 ### Priorita media
 
@@ -261,6 +316,7 @@ Possibili prossimi miglioramenti:
 - tenere `Migliori_Sconti` in review forte
 - usare `CODICISCONT0` come motore principale Amazon finche resta pubblico e stabile
 - non inserire segreti in questo file
+- i report temporanei di audit generati durante verifiche automatiche non vanno committati se non contengono valore operativo reale
 
 ## Comandi/azioni tipiche per ripartire
 

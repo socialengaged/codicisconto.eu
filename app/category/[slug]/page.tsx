@@ -17,10 +17,19 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     return {};
   }
 
+  const merchantKeywords = Array.from(new Set(data.offers.map((offer) => offer.merchant.name))).slice(0, 8);
+
   return {
     title: `${data.category.name} offerte e sconti`,
     description: data.category.description,
-    keywords: [data.category.name, "offerte", "sconti", "promozioni"],
+    keywords: [
+      data.category.name,
+      `${data.category.name} offerte`,
+      `${data.category.name} sconti`,
+      "promozioni",
+      "coupon verificati",
+      ...merchantKeywords
+    ],
     alternates: {
       canonical: `/category/${data.category.slug}`
     },

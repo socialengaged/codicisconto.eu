@@ -17,10 +17,20 @@ export async function generateMetadata({ params }: StorePageProps): Promise<Meta
     return {};
   }
 
+  const categoryKeywords = Array.from(new Set(data.offers.flatMap((offer) => offer.categories.map((item) => item.name)))).slice(0, 8);
+
   return {
     title: `${data.merchant.name} offerte e promozioni ufficiali`,
     description: data.merchant.description,
-    keywords: [data.merchant.name, "offerte", "promozioni", "sito ufficiale"],
+    keywords: [
+      data.merchant.name,
+      `${data.merchant.name} offerte`,
+      `${data.merchant.name} promozioni`,
+      `${data.merchant.name} sito ufficiale`,
+      "offerte verificate",
+      "promozioni attive",
+      ...categoryKeywords
+    ],
     alternates: {
       canonical: `/store/${data.merchant.slug}`
     },
