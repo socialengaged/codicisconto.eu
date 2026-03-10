@@ -14,6 +14,26 @@ export default async function AdminImportsPage() {
             Lancia manualmente la pipeline. Le fonti `fixture` servono per verificare il workflow locale; le
             `genericHtml` vanno configurate con una sorgente pubblica reale.
           </p>
+          <form action="/api/admin/import/bootstrap" method="post" className="grid">
+            <button className="button" type="submit">
+              Sincronizza fonti consigliate e pubblica i migliori coupon
+            </button>
+          </form>
+          <form action="/api/admin/import/bootstrap-telegram" method="post" className="grid">
+            <button className="button" type="submit">
+              Sincronizza fonti Telegram, filtra i post utili e pubblica i migliori Amazon
+            </button>
+          </form>
+          <form action="/api/admin/import/cleanup" method="post" className="grid">
+            <button className="button button-secondary" type="submit">
+              Ripulisci merchant e codici gia importati
+            </button>
+          </form>
+          <form action="/api/admin/import/enrich" method="post" className="grid">
+            <button className="button button-secondary" type="submit">
+              Arricchisci offerte con immagini ufficiali e categorie SEO
+            </button>
+          </form>
           <form action="/api/import/run" method="post" className="grid">
             <div className="field">
               <label htmlFor="sourceId">Fonte</label>

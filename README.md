@@ -26,6 +26,10 @@ MVP locale di un sito coupon orientato ad Amazon, con:
 - sezione blog: `/blog`
 - generazione bozze editoriali via admin/API
 
+Per lo stato operativo completo del progetto e dei flussi scraping attuali, vedi anche:
+
+- `docs/project-continuity-summary.md`
+
 Il progetto usa un archivio locale in `data/store.json` per rendere subito il sito navigabile in locale.
 In parallelo e presente anche `prisma/schema.prisma` per il passaggio a `PostgreSQL` in produzione o in una fase successiva.
 

@@ -57,6 +57,8 @@ export const genericHtmlAdapter: SourceAdapter = {
         title: chunk.slice(0, 110).trim(),
         description: chunk,
         code: extractFirstCode(chunk),
+        valueLabel: undefined,
+        expiresAtText: undefined,
         destinationUrl: source.baseUrl,
         rawUrl: `${source.baseUrl}#${hashString(`${source.id}-${index}-fallback`)}`,
         status: "review" as const,
@@ -70,10 +72,12 @@ export const genericHtmlAdapter: SourceAdapter = {
       const title = block.title.slice(0, 110).trim();
 
       return {
-        merchantHint: extractMerchantHint(source, block.text),
+        merchantHint: block.merchantName || extractMerchantHint(source, block.text),
         title,
         description: block.text,
         code: block.code || extractFirstCode(block.text),
+        valueLabel: block.valueLabel,
+        expiresAtText: block.expiresAtText,
         destinationUrl: source.baseUrl,
         rawUrl: `${source.baseUrl}#${hashString(`${source.id}-${index}-${title}`)}`,
         status: "review" as const,

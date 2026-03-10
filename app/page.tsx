@@ -30,15 +30,15 @@ export default async function HomePage() {
       <section className="hero">
         <div className="hero-grid">
           <article className="card hero-card">
-            <span className="badge badge-primary">MVP pronto per il deploy</span>
-            <h1>Coupon, offerte, news e guide ottimizzati per Search, Discover e merchant SEO.</h1>
+            <span className="badge badge-primary">Offerte verificate e link ufficiali</span>
+            <h1>Offerte, prodotti, news e guide ottimizzati per Search, Discover e merchant SEO.</h1>
             <p>
               `codicisconto.eu` combina pagine coupon, contenuti editoriali e monitoraggio promozionale per presidiare
               query commerciali, informative e campagne Amazon.
             </p>
             <div className="hero-actions">
               <Link href="/store/amazon" className="button">
-                Vedi coupon Amazon
+                Vedi offerte Amazon
               </Link>
               <Link href="/news" className="button button-secondary">
                 Leggi le news
@@ -120,7 +120,7 @@ export default async function HomePage() {
             <p className="muted">Il flusso editoriale mostra solo ciò che è già stato verificato.</p>
           </div>
           <Link href="/search" className="button button-secondary">
-            Cerca coupon
+            Cerca offerte
           </Link>
         </div>
         <div className="grid grid-2">

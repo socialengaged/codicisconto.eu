@@ -78,7 +78,13 @@ main {
 .nav-links {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
   color: var(--text-soft);
+}
+
+.nav-links a {
+  padding: 0.3rem 0;
+  font-weight: 600;
 }
 
 .hero {
@@ -224,6 +230,35 @@ main {
   gap: 1rem;
 }
 
+.offer-card__image-link {
+  display: block;
+}
+
+.offer-card__image,
+.offer-hero__image {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  object-fit: contain;
+}
+
+.offer-card__image {
+  aspect-ratio: 16 / 10;
+  padding: 0.75rem;
+}
+
+.offer-hero__image {
+  max-height: 420px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.offer-card p {
+  margin: 0;
+  line-height: 1.65;
+}
+
 .offer-card h3,
 .card h2,
 .card h3 {
@@ -288,6 +323,14 @@ th {
 
 .field label {
   font-weight: 700;
+}
+
+.inline-form {
+  align-items: stretch;
+}
+
+.inline-form .input {
+  flex: 1 1 280px;
 }
 
 .admin-layout {
@@ -373,5 +416,14 @@ th {
   .section-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 0.75rem 1rem;
+  }
+
+  .hero-card {
+    padding: 1.5rem;
   }
 }

@@ -1,3 +1,4 @@
+import { getOfferDisplayDescription, getOfferDisplayTitle } from "@/lib/offer-presenter";
 import type { EditorialArticle, OfferView } from "@/lib/types";
 
 export const SITE_NAME = "codicisconto.eu";
@@ -91,8 +92,8 @@ export function offerSchema(offer: OfferView) {
   return {
     "@context": "https://schema.org",
     "@type": "Offer",
-    name: offer.title,
-    description: offer.description,
+    name: getOfferDisplayTitle(offer),
+    description: getOfferDisplayDescription(offer),
     url: absoluteUrl(`/coupon/${offer.id}-${offer.slug}`),
     validFrom: offer.startsAt,
     validThrough: offer.expiresAt,
@@ -100,6 +101,7 @@ export function offerSchema(offer: OfferView) {
       "@type": "Organization",
       name: offer.merchant.name
     },
+    image: offer.imageUrl ? [offer.imageUrl] : undefined,
     category: offer.categories.map((item) => item.name).join(", "),
     availability: "https://schema.org/InStock"
   };

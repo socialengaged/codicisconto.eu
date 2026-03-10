@@ -18,14 +18,14 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   }
 
   return {
-    title: `${data.category.name} coupon e sconti`,
+    title: `${data.category.name} offerte e sconti`,
     description: data.category.description,
-    keywords: [data.category.name, "coupon", "sconti", "codici promozionali"],
+    keywords: [data.category.name, "offerte", "sconti", "promozioni"],
     alternates: {
       canonical: `/category/${data.category.slug}`
     },
     openGraph: {
-      title: `${data.category.name} coupon e sconti`,
+      title: `${data.category.name} offerte e sconti`,
       description: data.category.description,
       url: absoluteUrl(`/category/${data.category.slug}`)
     }
@@ -49,7 +49,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             { name: data.category.name, url: absoluteUrl(`/category/${data.category.slug}`) }
           ]),
           collectionPageSchema({
-            title: `${data.category.name} coupon e sconti`,
+            title: `${data.category.name} offerte e sconti`,
             description: data.category.description,
             url: absoluteUrl(`/category/${data.category.slug}`),
             itemUrls: data.offers.map((offer) => absoluteUrl(`/coupon/${offer.id}-${offer.slug}`))

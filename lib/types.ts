@@ -1,6 +1,6 @@
 export type OfferStatus = "draft" | "review" | "published" | "expired" | "rejected";
 export type OfferType = "coupon" | "deal";
-export type SourceKind = "genericHtml" | "fixture";
+export type SourceKind = "genericHtml" | "fixture" | "telegramPublic";
 export type ImportJobStatus = "idle" | "running" | "completed" | "failed";
 export type EditorialArticleType = "news" | "blog";
 export type EditorialArticleStatus = "draft" | "published";
@@ -29,6 +29,7 @@ export interface Offer {
   title: string;
   slug: string;
   description: string;
+  imageUrl?: string;
   code?: string;
   type: OfferType;
   valueLabel: string;
@@ -52,7 +53,10 @@ export interface ImportedOffer {
   merchantHint: string;
   title: string;
   description: string;
+  imageUrl?: string;
   code?: string;
+  valueLabel?: string;
+  expiresAtText?: string;
   destinationUrl: string;
   rawUrl: string;
   status: "review" | "published" | "rejected";

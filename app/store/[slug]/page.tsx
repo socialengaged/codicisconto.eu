@@ -18,14 +18,14 @@ export async function generateMetadata({ params }: StorePageProps): Promise<Meta
   }
 
   return {
-    title: `${data.merchant.name} coupon e offerte`,
+    title: `${data.merchant.name} offerte e promozioni ufficiali`,
     description: data.merchant.description,
-    keywords: [data.merchant.name, "coupon", "codici sconto", "offerte"],
+    keywords: [data.merchant.name, "offerte", "promozioni", "sito ufficiale"],
     alternates: {
       canonical: `/store/${data.merchant.slug}`
     },
     openGraph: {
-      title: `${data.merchant.name} coupon e offerte`,
+      title: `${data.merchant.name} offerte e promozioni ufficiali`,
       description: data.merchant.description,
       url: absoluteUrl(`/store/${data.merchant.slug}`)
     }
@@ -49,7 +49,7 @@ export default async function StorePage({ params }: StorePageProps) {
             { name: data.merchant.name, url: absoluteUrl(`/store/${data.merchant.slug}`) }
           ]),
           collectionPageSchema({
-            title: `${data.merchant.name} coupon e offerte`,
+            title: `${data.merchant.name} offerte e promozioni ufficiali`,
             description: data.merchant.description,
             url: absoluteUrl(`/store/${data.merchant.slug}`),
             itemUrls: data.offers.map((offer) => absoluteUrl(`/coupon/${offer.id}-${offer.slug}`))

@@ -4,7 +4,10 @@ export interface NormalizedImportedOffer {
   merchantHint: string;
   title: string;
   description: string;
+  imageUrl?: string;
   code?: string;
+  valueLabel?: string;
+  expiresAtText?: string;
   destinationUrl: string;
   rawUrl: string;
   status: "review";

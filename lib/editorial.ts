@@ -1,5 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import { unstable_noStore as noStore } from "next/cache";
 import type { EditorialArticle, EditorialArticleType, EditorialStore, OfferView } from "@/lib/types";
 import { getPublishedOffers } from "@/lib/store";
 import { slugify } from "@/lib/utils";
@@ -7,6 +8,7 @@ import { slugify } from "@/lib/utils";
 const EDITORIAL_PATH = path.join(process.cwd(), "data", "editorial.json");
 
 export async function readEditorialStore(): Promise<EditorialStore> {
+  noStore();
   const content = await fs.readFile(EDITORIAL_PATH, "utf8");
   return JSON.parse(content) as EditorialStore;
 }

@@ -13,7 +13,6 @@ export function SiteHeader() {
           <Link href="/news">News</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/search">Cerca</Link>
-          <Link href="/admin">Admin</Link>
         </nav>
       </div>
     </header>

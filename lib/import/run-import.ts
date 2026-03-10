@@ -1,6 +1,7 @@
 import type { NormalizedImportedOffer, SourceAdapter } from "@/lib/import/types";
 import { fixtureAdapter } from "@/lib/import/sources/fixture";
 import { genericHtmlAdapter } from "@/lib/import/sources/generic-html";
+import { telegramPublicAdapter } from "@/lib/import/telegram/adapter";
 import { appendImportJob, finalizeImportJob, readStore, upsertImportedOffers } from "@/lib/store";
 import { buildId } from "@/lib/utils";
 
@@ -10,6 +11,8 @@ function getAdapter(kind: string): SourceAdapter {
       return fixtureAdapter;
     case "genericHtml":
       return genericHtmlAdapter;
+    case "telegramPublic":
+      return telegramPublicAdapter;
     default:
       throw new Error(`Nessun adapter registrato per il tipo ${kind}.`);
   }

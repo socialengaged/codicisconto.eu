@@ -7,8 +7,8 @@ interface SearchPageProps {
 }
 
 export const metadata: Metadata = {
-  title: "Cerca coupon",
-  description: "Ricerca interna per coupon, merchant e categorie."
+  title: "Cerca offerte",
+  description: "Ricerca interna per offerte, merchant e categorie."
 };
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
@@ -18,8 +18,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   return (
     <div className="container section">
       <div className="page-heading">
-        <h1>Cerca coupon e offerte</h1>
-        <p>Trova rapidamente codici sconto per Amazon o altri merchant monitorati.</p>
+        <h1>Cerca offerte e promozioni</h1>
+        <p>Trova rapidamente promozioni attive, codici sconto reali e merchant monitorati.</p>
       </div>
 
       <form className="card inline-form" method="get">
