@@ -1,0 +1,768 @@
+{
+  "generatedAt": "2026-03-10T14:05:54.151Z",
+  "totalSources": 16,
+  "results": [
+    {
+      "id": "source_codicesconto",
+      "name": "CodiceSconto",
+      "url": "https://www.codicesconto.com/",
+      "merchantHint": "",
+      "configuredStrategy": "structured",
+      "finalStrategy": "structured",
+      "publicAccess": "no",
+      "renderMode": "unknown",
+      "accessIssue": "",
+      "httpStatus": 403,
+      "robots": {
+        "robotsUrl": "https://www.codicesconto.com/robots.txt",
+        "status": 200,
+        "available": true,
+        "snippet": "User-agent: *\r\nDisallow: /App_Offline.htm\r\nDisallow: /api/\r\nDisallow: /errors/\r\nDisallow: /termini/\r\nDisallow: /go?\r\nDisallow: /go-pub?\r\nDisallow: /go-sconto-link?\r\nDisallow: /voucher/\r\nDisallow: /prodotti?\r\nDisallow: /cashback\r\n\r\nUser-agent: facebookexternalhit\r\nDisallow: /App_Offline.htm\r\nDisallow: /api/\r\nDisallow: /errors/\r\nDisallow: /go?\r\nDisallow: /go-pub?\r\nDisallow: /go-sconto-link?\r\nDisallow: /voucher/\r"
+      },
+      "extractedCount": 0,
+      "samples": [],
+      "notes": [
+        "HTTP status 403"
+      ]
+    },
+    {
+      "id": "source_trovaprezzi_coupon",
+      "name": "Trovaprezzi Coupon",
+      "url": "https://www.trovaprezzi.it/codici-sconto-coupon",
+      "merchantHint": "",
+      "configuredStrategy": "structured",
+      "finalStrategy": "structured",
+      "publicAccess": "no",
+      "renderMode": "unknown",
+      "accessIssue": "",
+      "httpStatus": 403,
+      "robots": {
+        "robotsUrl": "https://www.trovaprezzi.it/robots.txt",
+        "status": 200,
+        "available": true,
+        "snippet": "User-agent: EtaoSpider\nDisallow: /\n\nUser-agent: psbot\nDisallow: /\n\nUser-agent: NPBot-1/2.0\nDisallow: /\n\nUser-agent: NPBot\nDisallow: /\n\nUser-agent: Googlebot\nUser-agent: AdsBot-Google-Mobile\nUser-agent: AdsBot-Google\nUser-agent: Bingbot\nUser-agent: AdldxBot\nCrawl-delay: 1\nDisallow: /magazine/geo/\nDisallow: /api/"
+      },
+      "extractedCount": 0,
+      "samples": [],
+      "notes": [
+        "HTTP status 403"
+      ]
+    },
+    {
+      "id": "source_sconti",
+      "name": "Sconti.com",
+      "url": "https://sconti.com/",
+      "merchantHint": "",
+      "configuredStrategy": "structured",
+      "finalStrategy": "structured",
+      "publicAccess": "yes",
+      "renderMode": "mixed",
+      "accessIssue": "",
+      "httpStatus": 200,
+      "robots": {
+        "robotsUrl": "https://sconti.com/robots.txt",
+        "status": 200,
+        "available": true,
+        "snippet": "User-agent: *\nDisallow: /ottieni-coupon/*\nDisallow: /out/*\nDisallow: /OUT/*\nDisallow: /Out/*\nDisallow: /search*\nDisallow: /*?*theme*\nDisallow: /*?*Theme*\nDisallow: /*?*PageSpeed*\nDisallow: /*?*Pagespeed*\nDisallow: /*?*pagespeed*\nDisallow: /*?*Custom*\nDisallow: /*?*custom*\nDisallow: /*?*ModPagespeed*\nDisallow: /*?*modpagespeed*\nDisallow: /*?*Modpagespeed*\nDisallow: /*?*modPagespeed*\nDisallow: /*?*replytocom*\nDisallow: /*?*shop_slug*\nDisallow: /*?*parent_slug*"
+      },
+      "extractedCount": 5,
+      "samples": [
+        {
+          "title": "Esclusivo Codice Sconto Smartbox fino al 15%",
+          "text": "Esclusivo Codice Sconto Smartbox fino al 15%",
+          "code": "Sconto",
+          "valueLabel": "15%",
+          "expiresAtText": "15%",
+          "confidenceScore": 0.95
+        },
+        {
+          "title": "Esclusivo Codice Sconto Myprotein del 10%",
+          "text": "Esclusivo Codice Sconto Myprotein del 10%",
+          "code": "Sconto",
+          "valueLabel": "10%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Codice Esclusivo Prozis 10% di sconto e regali",
+          "text": "Codice Esclusivo Prozis 10% di sconto e regali",
+          "code": "Esclusivo",
+          "valueLabel": "10%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Codice Promozionale Dyson del 5%",
+          "text": "Codice Promozionale Dyson del 5%",
+          "code": "Promozionale",
+          "valueLabel": "5%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Coupon ManoMano Pro di 25€",
+          "text": "Coupon ManoMano Pro di 25€",
+          "code": "ManoMano",
+          "valueLabel": "25€",
+          "confidenceScore": 0.8500000000000001
+        }
+      ],
+      "notes": [
+        "Campioni estratti con euristiche testuali da validare manualmente."
+      ]
+    },
+    {
+      "id": "source_codicerisparmio",
+      "name": "Codice Risparmio",
+      "url": "https://codicerisparmio.it/",
+      "merchantHint": "",
+      "configuredStrategy": "structured",
+      "finalStrategy": "structured",
+      "publicAccess": "yes",
+      "renderMode": "mixed",
+      "accessIssue": "",
+      "httpStatus": 200,
+      "robots": {
+        "robotsUrl": "https://codicerisparmio.it/robots.txt",
+        "status": 200,
+        "available": true,
+        "snippet": "User-agent: *\nDisallow: /admin/\nDisallow: /area-aziende/\nDisallow: /filament/exports/\nDisallow: /livewire/\nDisallow: /email/verify/\nDisallow: /area-utenti/\nDisallow: /horizon/\nDisallow: /login/\nDisallow: /register/\nDisallow: /forgot-password/\nDisallow: /log-viewer/\nDisallow: /up/\nDisallow: /pulse/\nDisallow: /api/\nDisallow: /webapp\nDisallow: /go/\nDisallow: /negozi/*?codeid=\n\n#User agent to block"
+      },
+      "extractedCount": 5,
+      "samples": [
+        {
+          "title": "Codice sconto Samsung fino al -20% su tanti prodotti",
+          "text": "Codice sconto Samsung fino al -20% su tanti prodotti",
+          "code": "sconto",
+          "valueLabel": "-20%",
+          "expiresAtText": "-20% su tanti prodotti",
+          "confidenceScore": 0.95
+        },
+        {
+          "title": "ESCLUSIVO Codice sconto Sony del 10% sulle TV",
+          "text": "ESCLUSIVO Codice sconto Sony del 10% sulle TV",
+          "code": "sconto",
+          "valueLabel": "10%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Coupon Hotiday del 5% ESCLUSIVO",
+          "text": "Coupon Hotiday del 5% ESCLUSIVO",
+          "code": "Hotiday",
+          "valueLabel": "5%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Codice sconto Colorland -45% ESCLUSIVO",
+          "text": "Codice sconto Colorland -45% ESCLUSIVO",
+          "code": "sconto",
+          "valueLabel": "-45%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Codice sconto Adidas Padel -5%",
+          "text": "Codice sconto Adidas Padel -5%",
+          "code": "sconto",
+          "valueLabel": "-5%",
+          "confidenceScore": 0.8500000000000001
+        }
+      ],
+      "notes": [
+        "Campioni estratti con euristiche testuali da validare manualmente."
+      ]
+    },
+    {
+      "id": "source_topnegozi",
+      "name": "TopNegozi",
+      "url": "https://www.topnegozi.it/",
+      "merchantHint": "",
+      "configuredStrategy": "structured",
+      "finalStrategy": "structured",
+      "publicAccess": "yes",
+      "renderMode": "mixed",
+      "accessIssue": "",
+      "httpStatus": 200,
+      "robots": {
+        "robotsUrl": "https://www.topnegozi.it/robots.txt",
+        "status": 200,
+        "available": true,
+        "snippet": "User-agent: Mediapartners-Google*\nDisallow:\n\nUser-agent: *\nDisallow: /redirect.php\nDisallow: /redirect_offers_new.php\nDisallow: /offer-out\nDisallow: /blog/wp-admin/*\nDisallow: /blog/wp-login.php\nDisallow: /ajax/\nDisallow: /get-cdata\n\n\n#User agent to block\nUser-agent: magpie-crawler\nUser-agent: brandwatch\nUser-agent: YandexBot\nUser-agent: trendictionbot\nUser-agent: Sogou\nUser-agent: Sogou Spider"
+      },
+      "extractedCount": 5,
+      "samples": [
+        {
+          "title": "Codice sconto Esclusivo 12€",
+          "text": "Codice sconto Esclusivo 12€",
+          "code": "sconto",
+          "valueLabel": "12€",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Codice sconto Extra del 8% Esclusivo",
+          "text": "Codice sconto Extra del 8% Esclusivo",
+          "code": "sconto",
+          "valueLabel": "8%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Esclusivo Codice sconto Honor del 10% su tutto",
+          "text": "Esclusivo Codice sconto Honor del 10% su tutto",
+          "code": "sconto",
+          "valueLabel": "10%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Esclusivo Codice sconto Norauto del 10% sul tagliando auto",
+          "text": "Esclusivo Codice sconto Norauto del 10% sul tagliando auto",
+          "code": "sconto",
+          "valueLabel": "10%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Esclusivo Codice sconto Lagostina del 12% extra",
+          "text": "Esclusivo Codice sconto Lagostina del 12% extra",
+          "code": "sconto",
+          "valueLabel": "12%",
+          "confidenceScore": 0.8500000000000001
+        }
+      ],
+      "notes": [
+        "Campioni estratti con euristiche testuali da validare manualmente."
+      ]
+    },
+    {
+      "id": "source_codice_sconto_net",
+      "name": "Codice-Sconto.net",
+      "url": "https://www.codice-sconto.net/",
+      "merchantHint": "",
+      "configuredStrategy": "structured",
+      "finalStrategy": "structured",
+      "publicAccess": "yes",
+      "renderMode": "mixed",
+      "accessIssue": "",
+      "httpStatus": 200,
+      "robots": {
+        "robotsUrl": "https://www.codice-sconto.net/robots.txt",
+        "status": 200,
+        "available": true,
+        "snippet": "# codice-sconto\n\nUser-agent: PetalBot\nDisallow: /\n\nUser-agent: Seekport\nDisallow: /\n\nUser-agent: BLEXBot\nDisallow: /\n\nUser-agent: MJ12bot\nDisallow: /\n\nUser-agent: YandexBot\nDisallow: /\n\nUser-agent: BananaBot\nDisallow: /\n"
+      },
+      "extractedCount": 5,
+      "samples": [
+        {
+          "title": "Codice promozionale di Booking.com: 10% di riduzione per soggiorni di almeno 3 notti",
+          "text": "Codice promozionale di Booking.com: 10% di riduzione per soggiorni di almeno 3 notti",
+          "code": "promozionale",
+          "valueLabel": "10%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Codice promozionale SHEIN del 25% per l&#x27;abbigliamento",
+          "text": "Codice promozionale SHEIN del 25% per l&#x27;abbigliamento",
+          "code": "promozionale",
+          "valueLabel": "25%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Sconto di 10€ su Privalia per il primo ordine",
+          "text": "Sconto di 10€ su Privalia per il primo ordine",
+          "valueLabel": "10€",
+          "confidenceScore": 0.6500000000000001
+        },
+        {
+          "title": "© 2026 Codice-sconto.net. Tutti i diritti riservati.",
+          "text": "© 2026 Codice-sconto.net. Tutti i diritti riservati.",
+          "code": "sconto",
+          "confidenceScore": 0.6500000000000001
+        },
+        {
+          "title": "Scopri tutti i codici sconto dei migliori negozi",
+          "text": "Scopri tutti i codici sconto dei migliori negozi",
+          "confidenceScore": 0.45
+        }
+      ],
+      "notes": [
+        "Campioni estratti con euristiche testuali da validare manualmente."
+      ]
+    },
+    {
+      "id": "source_cuponation_farmacia_loreto",
+      "name": "Cuponation Farmacia Loreto",
+      "url": "https://www.cuponation.it/codice-sconto-farmacia-loreto",
+      "merchantHint": "Farmacia Loreto",
+      "configuredStrategy": "structured",
+      "finalStrategy": "structured",
+      "publicAccess": "yes",
+      "renderMode": "mixed",
+      "accessIssue": "",
+      "httpStatus": 200,
+      "robots": {
+        "robotsUrl": "https://www.cuponation.it/robots.txt",
+        "status": 200,
+        "available": true,
+        "snippet": "User-agent: *\nAllow: /\nAllow: /api/getCoupons\n\nDisallow: /api/*\nDisallow: /loading/*\nDisallow: /mercury/out*\nDisallow: /clickout/*\nDisallow: /user/submit\nDisallow: /*?preview\n\nUser-agent: omgilibot\nDisallow: /\n\nUser-agent: omgili\nDisallow: /\n\nUser-agent: Bytespider\nDisallow: /\n"
+      },
+      "extractedCount": 5,
+      "samples": [
+        {
+          "title": "coupon Farmacia Loreto | 5% Sconto a Marzo 2026 | CUPONATION",
+          "text": "coupon Farmacia Loreto | 5% Sconto a Marzo 2026 | CUPONATION",
+          "code": "Farmacia",
+          "valueLabel": "5%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Usa il coupon Farmacia Loreto del 5% su Miamo",
+          "text": "Usa il coupon Farmacia Loreto del 5% su Miamo",
+          "code": "Farmacia",
+          "valueLabel": "5%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Goditi il 5% di sconto su Skinceuticals usando questo codice sconto Farmacia Loreto",
+          "text": "Goditi il 5% di sconto su Skinceuticals usando questo codice sconto Farmacia Loreto",
+          "code": "sconto",
+          "valueLabel": "5%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Coupon sconto Farmacia Loreto del 5% su MyCli",
+          "text": "Coupon sconto Farmacia Loreto del 5% su MyCli",
+          "code": "sconto",
+          "valueLabel": "5%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Ricevi fino a 180€ di sconto grazie ai coupon Farmacia Loreto validi con la Privilege Card",
+          "text": "Ricevi fino a 180€ di sconto grazie ai coupon Farmacia Loreto validi con la Privilege Card",
+          "code": "Farmacia",
+          "valueLabel": "180€",
+          "confidenceScore": 0.8500000000000001
+        }
+      ],
+      "notes": [
+        "Campioni estratti con euristiche testuali da validare manualmente."
+      ]
+    },
+    {
+      "id": "source_discoup_best",
+      "name": "Discoup Migliori Codici",
+      "url": "https://www.discoup.com/it/migliori-codici-sconto.html",
+      "merchantHint": "",
+      "configuredStrategy": "structured",
+      "finalStrategy": "structured",
+      "publicAccess": "yes",
+      "renderMode": "server-rendered",
+      "accessIssue": "",
+      "httpStatus": 200,
+      "robots": {
+        "robotsUrl": "https://www.discoup.com/robots.txt",
+        "status": 200,
+        "available": true,
+        "snippet": "User-agent: *\r\nDisallow: /out/\r\nDisallow: /sem/\r\nDisallow: /lp/\r\nDisallow: /test/\r\nDisallow: /it/private/\r\nDisallow: /es/private/\r\nDisallow: /uk/private/\r\nDisallow: /us/private/\r\nDisallow: /fr/private/\r\nDisallow: /de/private/\r\nDisallow: /br/private/\r\nDisallow: /it/ni/\r\nDisallow: /uk/ni/\r\nDisallow: /us/ni/\r\nDisallow: /fr/ni/\r\nDisallow: /es/ni/\r\nDisallow: /de/ni/\r\nDisallow: /br/ni/\r\nAllow: /\r"
+      },
+      "extractedCount": 5,
+      "samples": [
+        {
+          "title": "Codice Sconto Stylevana fino al 22% ESCLUSIVO",
+          "text": "Codice Sconto Stylevana fino al 22% ESCLUSIVO",
+          "code": "Sconto",
+          "valueLabel": "22%",
+          "expiresAtText": "22% ESCLUSIVO",
+          "confidenceScore": 0.95
+        },
+        {
+          "title": "Codice sconto TrainPal fino al 15% ESCLUSIVO",
+          "text": "Codice sconto TrainPal fino al 15% ESCLUSIVO",
+          "code": "sconto",
+          "valueLabel": "15%",
+          "expiresAtText": "15% ESCLUSIVO",
+          "confidenceScore": 0.95
+        },
+        {
+          "title": "Prenota il tuo parcheggio su Looking4Parking e risparmia fino al 22% grazie a questo coupon RISERVATO.",
+          "text": "Prenota il tuo parcheggio su Looking4Parking e risparmia fino al 22% grazie a questo coupon RISERVATO.",
+          "code": "RISERVATO",
+          "valueLabel": "22%",
+          "expiresAtText": "22% grazie a questo coupon RISERVATO",
+          "confidenceScore": 0.95
+        },
+        {
+          "title": "Grazie a questo voucher risparmi il 5% EXTRA sui prodotti già in sconto fino al 70%. Inoltre, ricevi un OMAGGIO per acqu",
+          "text": "Grazie a questo voucher risparmi il 5% EXTRA sui prodotti già in sconto fino al 70%. Inoltre, ricevi un OMAGGIO per acquisti superiori a 59€. Valido fino all'11 marzo.",
+          "code": "risparmi",
+          "valueLabel": "5%",
+          "expiresAtText": "70%",
+          "confidenceScore": 0.95
+        },
+        {
+          "title": "Applica il codice promozionale che trovi solo su Discoup! Il codice è valido SOLO via APP e ti darà diritto ad uno scont",
+          "text": "Applica il codice promozionale che trovi solo su Discoup! Il codice è valido SOLO via APP e ti darà diritto ad uno sconto di 8€ su tutte le prenotazioni di treni in Italia di almeno 8€. Valido per sulla prima prenotazione fino al 31 marzo.",
+          "code": "promozionale",
+          "valueLabel": "8€",
+          "expiresAtText": "31 marzo",
+          "confidenceScore": 0.9
+        }
+      ],
+      "notes": [
+        "Campioni estratti con euristiche testuali da validare manualmente."
+      ]
+    },
+    {
+      "id": "source_scontify_zalando_prive_newsletter",
+      "name": "Scontify Zalando Prive Newsletter",
+      "url": "https://www.scontify.net/promozioni/prive-by-zalando-codice-sconto-di-10e-con-liscrizione-alla-newsletter/114350/",
+      "merchantHint": "Zalando Prive",
+      "configuredStrategy": "structured",
+      "finalStrategy": "structured",
+      "publicAccess": "yes",
+      "renderMode": "mixed",
+      "accessIssue": "",
+      "httpStatus": 200,
+      "robots": {
+        "robotsUrl": "https://www.scontify.net/robots.txt",
+        "status": 200,
+        "available": true,
+        "snippet": "User-agent: *\nDisallow: /wp-admin/\nDisallow: /trackback/\nDisallow: /xmlrpc.php\nDisallow: /feed/\nDisallow: /offerta/\nAllow: /wp-admin/admin-ajax.php\n\nUser-agent: Googlebot\nAllow: /\n\nUser-agent: AhrefsBot\nCrawl-delay: 10\nAllow: /\n\nUser-agent: Barkrowler\nCrawl-delay: 10\nAllow: /\n\nUser-agent: SemrushBot"
+      },
+      "extractedCount": 5,
+      "samples": [
+        {
+          "title": "Privé By Zalando: Codice Sconto Di 10€ Con L&#039;iscrizione Alla Newsletter - Scontify.net - Offerte E Coupon: #BESLY!",
+          "text": "Privé By Zalando: Codice Sconto Di 10€ Con L&#039;iscrizione Alla Newsletter - Scontify.net - Offerte E Coupon: #BESLY!",
+          "code": "Sconto",
+          "valueLabel": "10€",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Privé by Zalando: Codice sconto di 10€ con l&#8217;iscrizione alla newsletter",
+          "text": "Privé by Zalando: Codice sconto di 10€ con l&#8217;iscrizione alla newsletter",
+          "code": "sconto",
+          "valueLabel": "10€",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Sarenza: Codice sconto del 30% con spesa minima di 110€",
+          "text": "Sarenza: Codice sconto del 30% con spesa minima di 110€",
+          "code": "sconto",
+          "valueLabel": "30%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Disney Store: Codice Sconto del 20% su articoli selezionati",
+          "text": "Disney Store: Codice Sconto del 20% su articoli selezionati",
+          "code": "Sconto",
+          "valueLabel": "20%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Feltrinelli: Codice sconto di 10€ su ordine di 55€",
+          "text": "Feltrinelli: Codice sconto di 10€ su ordine di 55€",
+          "code": "sconto",
+          "valueLabel": "10€",
+          "confidenceScore": 0.8500000000000001
+        }
+      ],
+      "notes": [
+        "Campioni estratti con euristiche testuali da validare manualmente."
+      ]
+    },
+    {
+      "id": "source_scontify_farmacia_loreto_app",
+      "name": "Scontify Farmacia Loreto App",
+      "url": "https://www.scontify.net/promozioni/farmacia-loreto-codice-sconto-del-10-su-app/599191/",
+      "merchantHint": "Farmacia Loreto",
+      "configuredStrategy": "structured",
+      "finalStrategy": "structured",
+      "publicAccess": "yes",
+      "renderMode": "mixed",
+      "accessIssue": "",
+      "httpStatus": 200,
+      "robots": {
+        "robotsUrl": "https://www.scontify.net/robots.txt",
+        "status": 200,
+        "available": true,
+        "snippet": "User-agent: *\nDisallow: /wp-admin/\nDisallow: /trackback/\nDisallow: /xmlrpc.php\nDisallow: /feed/\nDisallow: /offerta/\nAllow: /wp-admin/admin-ajax.php\n\nUser-agent: Googlebot\nAllow: /\n\nUser-agent: AhrefsBot\nCrawl-delay: 10\nAllow: /\n\nUser-agent: Barkrowler\nCrawl-delay: 10\nAllow: /\n\nUser-agent: SemrushBot"
+      },
+      "extractedCount": 5,
+      "samples": [
+        {
+          "title": "TopFarmacia: Codice sconto fino al 15% extra",
+          "text": "TopFarmacia: Codice sconto fino al 15% extra",
+          "code": "sconto",
+          "valueLabel": "15%",
+          "expiresAtText": "15% extra",
+          "confidenceScore": 0.95
+        },
+        {
+          "title": "Farmacia Loreto: Codice Sconto Del 10% Su App - Scontify.net - Offerte E Coupon: #BESLY!",
+          "text": "Farmacia Loreto: Codice Sconto Del 10% Su App - Scontify.net - Offerte E Coupon: #BESLY!",
+          "code": "Sconto",
+          "valueLabel": "10%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Farmacia Loreto: Codice sconto del 10% su app",
+          "text": "Farmacia Loreto: Codice sconto del 10% su app",
+          "code": "sconto",
+          "valueLabel": "10%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Parfumdreams: Codice Sconto del 20% su articoli selezionati",
+          "text": "Parfumdreams: Codice Sconto del 20% su articoli selezionati",
+          "code": "Sconto",
+          "valueLabel": "20%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Notino: Codice Sconto del 15% su tutto con spesa superiore a 10€",
+          "text": "Notino: Codice Sconto del 15% su tutto con spesa superiore a 10€",
+          "code": "Sconto",
+          "valueLabel": "15%",
+          "confidenceScore": 0.8500000000000001
+        }
+      ],
+      "notes": [
+        "Campioni estratti con euristiche testuali da validare manualmente."
+      ]
+    },
+    {
+      "id": "source_ponss",
+      "name": "Ponss",
+      "url": "https://www.ponss.it/",
+      "merchantHint": "",
+      "configuredStrategy": "fallback",
+      "finalStrategy": "fallback",
+      "publicAccess": "yes",
+      "renderMode": "server-rendered",
+      "accessIssue": "",
+      "httpStatus": 200,
+      "robots": {
+        "robotsUrl": "https://www.ponss.it/robots.txt",
+        "status": 200,
+        "available": true,
+        "snippet": "user-agent:*\r\nDisallow: /backoffice/\r\nDisallow: /account/\r\nDisallow: /referrals/upsert/\r\n\r\n#-- Spam Bots & Other Unwanted Bots --#\r\nUser-agent: aiHitBot\r\nUser-agent: Barkrowler\r\nUser-agent: BDCbot\r\nUser-agent: BLEXBot\r\nUser-agent: BLP_bbot\r\nUser-agent: brokenlinkcheck.com\r\nUser-agent: Buck\r\nUser-agent: CCBot\r\nUser-agent: Cliqzbot\r\nUser-agent: cyencebot\r\nUser-agent: DomainCrawler\r\nUser-agent: Dow Jones Searchbot\r\nUser-agent: Exabot\r\nUser-agent: ExtLinksBot\r"
+      },
+      "extractedCount": 5,
+      "samples": [
+        {
+          "title": "Ricevi un Buono Regalo Amazon.it da 50€ aprendo il conto Genius buddy con codice invito entro il...",
+          "text": "Ricevi un Buono Regalo Amazon.it da 50€ aprendo il conto Genius buddy con codice invito entro il...",
+          "code": "invito",
+          "valueLabel": "50€",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Ricevi 10€ di bonus di benvenuto iscrivendoti a BBVA tramite codice invito e completando l...",
+          "text": "Ricevi 10€ di bonus di benvenuto iscrivendoti a BBVA tramite codice invito e completando l...",
+          "code": "invito",
+          "valueLabel": "10€",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Ricevi 5€ di ricarica omaggio passando a Kena Mobile tramite Codice Invito.",
+          "text": "Ricevi 5€ di ricarica omaggio passando a Kena Mobile tramite Codice Invito.",
+          "code": "Invito",
+          "valueLabel": "5€",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Ricevi 50€ di bonus quando apri un conto corrente Fineco con il codice amico e completi almeno...",
+          "text": "Ricevi 50€ di bonus quando apri un conto corrente Fineco con il codice amico e completi almeno...",
+          "code": "amico",
+          "valueLabel": "50€",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Ricevi un Buono Regalo Amazon.it da 30€ iscrivendoti a Findomestic tramite un link o codice amico...",
+          "text": "Ricevi un Buono Regalo Amazon.it da 30€ iscrivendoti a Findomestic tramite un link o codice amico...",
+          "code": "amico",
+          "valueLabel": "30€",
+          "confidenceScore": 0.8500000000000001
+        }
+      ],
+      "notes": [
+        "Campioni estratti con euristiche testuali da validare manualmente."
+      ]
+    },
+    {
+      "id": "source_unidays",
+      "name": "UNiDAYS",
+      "url": "https://www.myunidays.com/IT/it-IT",
+      "merchantHint": "",
+      "configuredStrategy": "skip",
+      "finalStrategy": "skip",
+      "publicAccess": "limited",
+      "renderMode": "unknown",
+      "accessIssue": "configured_skip",
+      "httpStatus": 0,
+      "robots": {
+        "robotsUrl": "https://www.myunidays.com/robots.txt",
+        "status": 200,
+        "available": true,
+        "snippet": "User-Agent: BrandVerity/1.0\r\nDisallow: /\r\n"
+      },
+      "extractedCount": 0,
+      "samples": [],
+      "notes": [
+        "Fonte marcata come skip nel catalogo iniziale."
+      ]
+    },
+    {
+      "id": "source_topnegozi_zalando",
+      "name": "TopNegozi Zalando",
+      "url": "https://www.topnegozi.it/zalando",
+      "merchantHint": "Zalando",
+      "configuredStrategy": "structured",
+      "finalStrategy": "structured",
+      "publicAccess": "yes",
+      "renderMode": "server-rendered",
+      "accessIssue": "",
+      "httpStatus": 200,
+      "robots": {
+        "robotsUrl": "https://www.topnegozi.it/robots.txt",
+        "status": 200,
+        "available": true,
+        "snippet": "User-agent: Mediapartners-Google*\nDisallow:\n\nUser-agent: *\nDisallow: /redirect.php\nDisallow: /redirect_offers_new.php\nDisallow: /offer-out\nDisallow: /blog/wp-admin/*\nDisallow: /blog/wp-login.php\nDisallow: /ajax/\nDisallow: /get-cdata\n\n\n#User agent to block\nUser-agent: magpie-crawler\nUser-agent: brandwatch\nUser-agent: YandexBot\nUser-agent: trendictionbot\nUser-agent: Sogou\nUser-agent: Sogou Spider"
+      },
+      "extractedCount": 5,
+      "samples": [
+        {
+          "title": "Codice sconto Zalando 20% - Marzo 2026",
+          "text": "Codice sconto Zalando 20% - Marzo 2026",
+          "code": "sconto",
+          "valueLabel": "20%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Codice sconto Zalando del 20% extra",
+          "text": "Codice sconto Zalando del 20% extra",
+          "code": "sconto",
+          "valueLabel": "20%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Coupon Zalando del 10% per studenti",
+          "text": "Coupon Zalando del 10% per studenti",
+          "code": "Zalando",
+          "valueLabel": "10%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Codice sconto Zalando del 10%",
+          "text": "Codice sconto Zalando del 10%",
+          "code": "sconto",
+          "valueLabel": "10%",
+          "confidenceScore": 0.8500000000000001
+        },
+        {
+          "title": "Coupon Zalando di 5€ con Club Plus",
+          "text": "Coupon Zalando di 5€ con Club Plus",
+          "code": "Zalando",
+          "valueLabel": "5€",
+          "confidenceScore": 0.8500000000000001
+        }
+      ],
+      "notes": [
+        "Campioni estratti con euristiche testuali da validare manualmente."
+      ]
+    },
+    {
+      "id": "source_topnegozi_zalando_prive",
+      "name": "TopNegozi Zalando Prive",
+      "url": "https://www.topnegozi.it/zalando-prive",
+      "merchantHint": "Zalando Prive",
+      "configuredStrategy": "skip",
+      "finalStrategy": "skip",
+      "publicAccess": "limited",
+      "renderMode": "unknown",
+      "accessIssue": "configured_skip",
+      "httpStatus": 0,
+      "robots": {
+        "robotsUrl": "https://www.topnegozi.it/robots.txt",
+        "status": 200,
+        "available": true,
+        "snippet": "User-agent: Mediapartners-Google*\nDisallow:\n\nUser-agent: *\nDisallow: /redirect.php\nDisallow: /redirect_offers_new.php\nDisallow: /offer-out\nDisallow: /blog/wp-admin/*\nDisallow: /blog/wp-login.php\nDisallow: /ajax/\nDisallow: /get-cdata\n\n\n#User agent to block\nUser-agent: magpie-crawler\nUser-agent: brandwatch\nUser-agent: YandexBot\nUser-agent: trendictionbot\nUser-agent: Sogou\nUser-agent: Sogou Spider"
+      },
+      "extractedCount": 0,
+      "samples": [],
+      "notes": [
+        "Fonte marcata come skip nel catalogo iniziale."
+      ]
+    },
+    {
+      "id": "source_zalando_prive_official",
+      "name": "Zalando Prive Official",
+      "url": "https://www.zalando-prive.it/codice-sconto-zalando-prive/",
+      "merchantHint": "Zalando Prive",
+      "configuredStrategy": "fallback",
+      "finalStrategy": "fallback",
+      "publicAccess": "yes",
+      "renderMode": "mixed",
+      "accessIssue": "",
+      "httpStatus": 200,
+      "robots": {
+        "robotsUrl": "https://www.zalando-prive.it/robots.txt",
+        "status": 200,
+        "available": true,
+        "snippet": "User-agent: Pinterestbot\nCrawl-delay: 0.2\n\nUser-agent: *\nAllow: /\nDisallow: /myaccount/\nDisallow: /checkout/\n"
+      },
+      "extractedCount": 5,
+      "samples": [
+        {
+          "title": "Voucher | Privé by Zalando (Codice sconto Marzo &#x27;26)",
+          "text": "Voucher | Privé by Zalando (Codice sconto Marzo &#x27;26)",
+          "code": "sconto",
+          "confidenceScore": 0.6500000000000001
+        },
+        {
+          "title": "Inserisci un unico codice: ricorda che puoi riscattare un solo voucher per ordine.",
+          "text": "Inserisci un unico codice: ricorda che puoi riscattare un solo voucher per ordine.",
+          "code": "ricorda",
+          "confidenceScore": 0.6500000000000001
+        },
+        {
+          "title": "Verifica che sia corretto: ricontrolla il codice promozionale e correggi eventuali errori di digitazione.",
+          "text": "Verifica che sia corretto: ricontrolla il codice promozionale e correggi eventuali errori di digitazione.",
+          "code": "promozionale",
+          "confidenceScore": 0.6500000000000001
+        },
+        {
+          "title": "Al momento su Privé by Zalando puoi riscattare un solo codice sconto per ordine. Questa politica fa sì che ogni voucher ",
+          "text": "Al momento su Privé by Zalando puoi riscattare un solo codice sconto per ordine. Questa politica fa sì che ogni voucher abbia il massimo valore. Per ottimizzare i risparmi scegli con attenzione il buono più conveniente in base al tipo di ordine.",
+          "code": "sconto",
+          "confidenceScore": 0.6000000000000001
+        },
+        {
+          "title": "Buoni di benvenuto: uno sconto speciale per ringraziarti di esserti iscritto a Privé by Zalando.",
+          "text": "Buoni di benvenuto: uno sconto speciale per ringraziarti di esserti iscritto a Privé by Zalando.",
+          "confidenceScore": 0.45
+        }
+      ],
+      "notes": [
+        "Campioni estratti con euristiche testuali da validare manualmente."
+      ]
+    },
+    {
+      "id": "source_studentbeans_zalando",
+      "name": "Student Beans Zalando",
+      "url": "https://www.studentbeans.com/student-discount/it/zalando",
+      "merchantHint": "Zalando",
+      "configuredStrategy": "skip",
+      "finalStrategy": "skip",
+      "publicAccess": "limited",
+      "renderMode": "unknown",
+      "accessIssue": "configured_skip",
+      "httpStatus": 0,
+      "robots": {
+        "robotsUrl": "https://www.studentbeans.com/robots.txt",
+        "status": 200,
+        "available": true,
+        "snippet": "User-Agent: *\nDisallow: *query*\nDisallow: *savedoffers*\nDisallow: *user_return_to*\nDisallow: *saved_for_later*\nDisallow: */my/\nDisallow: /social\nDisallow: /styleguide\nDisallow: */login.json\nDisallow: /blog/wp-content*\n\nUser-agent: bingbot\nDisallow: */results\n\nUser-agent: AdsBot-Google\nAllow: /\n\nUser-agent: AdsBot-Google-Mobile\nAllow: /\n"
+      },
+      "extractedCount": 0,
+      "samples": [],
+      "notes": [
+        "Fonte marcata come skip nel catalogo iniziale."
+      ]
+    }
+  ]
+}

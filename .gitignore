@@ -1,0 +1,14 @@
+.next
+node_modules
+.env
+.env.local
+.env.production
+dist
+coverage
+prisma/dev.db
+ssh ORACLE/
+*.key
+*.pem
+*.ppk
+*.tmp
+SERVER_OVH_GUIDA_OPERATIVA.md

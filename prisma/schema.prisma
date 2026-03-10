@@ -1,0 +1,149 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum OfferStatus {
+  draft
+  review
+  published
+  expired
+  rejected
+}
+
+enum OfferType {
+  coupon
+  deal
+}
+
+enum SourceKind {
+  genericHtml
+  fixture
+}
+
+enum ImportJobStatus {
+  idle
+  running
+  completed
+  failed
+}
+
+model Merchant {
+  id                 String   @id @default(cuid())
+  name               String
+  slug               String   @unique
+  domain             String
+  description        String
+  logoUrl            String?
+  isActive           Boolean  @default(true)
+  isAffiliateEnabled Boolean  @default(false)
+  offers             Offer[]
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+model Category {
+  id          String          @id @default(cuid())
+  name        String
+  slug        String          @unique
+  description String
+  offers      OfferCategory[]
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+}
+
+model Offer {
+  id             String          @id @default(cuid())
+  merchantId     String
+  merchant       Merchant        @relation(fields: [merchantId], references: [id])
+  title          String
+  slug           String
+  description    String
+  code           String?
+  type           OfferType
+  valueLabel     String
+  destinationUrl String
+  trackingUrl    String
+  startsAt       DateTime
+  expiresAt      DateTime?
+  isExclusive    Boolean         @default(false)
+  status         OfferStatus     @default(review)
+  sourceId       String?
+  source         Source?         @relation(fields: [sourceId], references: [id])
+  importedOfferId String?         @unique
+  importedOffer  ImportedOffer?  @relation(fields: [importedOfferId], references: [id])
+  categories     OfferCategory[]
+  lastVerifiedAt DateTime?
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  @@index([merchantId, status])
+}
+
+model OfferCategory {
+  offerId     String
+  categoryId  String
+  offer       Offer    @relation(fields: [offerId], references: [id], onDelete: Cascade)
+  category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([offerId, categoryId])
+}
+
+model Source {
+  id          String        @id @default(cuid())
+  name        String
+  kind        SourceKind
+  baseUrl     String
+  isActive    Boolean       @default(true)
+  notes       String?
+  offers      Offer[]
+  imports     ImportedOffer[]
+  jobs        ImportJob[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+}
+
+model ImportedOffer {
+  id              String      @id @default(cuid())
+  sourceId        String
+  source          Source      @relation(fields: [sourceId], references: [id])
+  merchantHint    String
+  title           String
+  description     String
+  code            String?
+  destinationUrl  String
+  rawUrl          String
+  status          OfferStatus @default(review)
+  confidenceScore Float       @default(0.5)
+  payloadHash     String      @unique
+  detectedAt      DateTime
+  warnings        String[]
+  offer           Offer?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+}
+
+model ImportJob {
+  id            String          @id @default(cuid())
+  sourceId      String
+  source        Source          @relation(fields: [sourceId], references: [id])
+  status        ImportJobStatus @default(idle)
+  startedAt     DateTime        @default(now())
+  finishedAt    DateTime?
+  importedCount Int             @default(0)
+  warningCount  Int             @default(0)
+  error         String?
+}
+
+model AdminUser {
+  id          String   @id @default(cuid())
+  username    String   @unique
+  displayName String
+  role        String   @default("admin")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

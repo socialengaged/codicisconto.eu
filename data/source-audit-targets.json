@@ -1,0 +1,114 @@
+[
+  {
+    "id": "source_codicesconto",
+    "name": "CodiceSconto",
+    "url": "https://www.codicesconto.com/",
+    "merchantHint": "",
+    "strategy": "structured"
+  },
+  {
+    "id": "source_trovaprezzi_coupon",
+    "name": "Trovaprezzi Coupon",
+    "url": "https://www.trovaprezzi.it/codici-sconto-coupon",
+    "merchantHint": "",
+    "strategy": "structured"
+  },
+  {
+    "id": "source_sconti",
+    "name": "Sconti.com",
+    "url": "https://sconti.com/",
+    "merchantHint": "",
+    "strategy": "structured"
+  },
+  {
+    "id": "source_codicerisparmio",
+    "name": "Codice Risparmio",
+    "url": "https://codicerisparmio.it/",
+    "merchantHint": "",
+    "strategy": "structured"
+  },
+  {
+    "id": "source_topnegozi",
+    "name": "TopNegozi",
+    "url": "https://www.topnegozi.it/",
+    "merchantHint": "",
+    "strategy": "structured"
+  },
+  {
+    "id": "source_codice_sconto_net",
+    "name": "Codice-Sconto.net",
+    "url": "https://www.codice-sconto.net/",
+    "merchantHint": "",
+    "strategy": "structured"
+  },
+  {
+    "id": "source_cuponation_farmacia_loreto",
+    "name": "Cuponation Farmacia Loreto",
+    "url": "https://www.cuponation.it/codice-sconto-farmacia-loreto",
+    "merchantHint": "Farmacia Loreto",
+    "strategy": "structured"
+  },
+  {
+    "id": "source_discoup_best",
+    "name": "Discoup Migliori Codici",
+    "url": "https://www.discoup.com/it/migliori-codici-sconto.html",
+    "merchantHint": "",
+    "strategy": "structured"
+  },
+  {
+    "id": "source_scontify_zalando_prive_newsletter",
+    "name": "Scontify Zalando Prive Newsletter",
+    "url": "https://www.scontify.net/promozioni/prive-by-zalando-codice-sconto-di-10e-con-liscrizione-alla-newsletter/114350/",
+    "merchantHint": "Zalando Prive",
+    "strategy": "structured"
+  },
+  {
+    "id": "source_scontify_farmacia_loreto_app",
+    "name": "Scontify Farmacia Loreto App",
+    "url": "https://www.scontify.net/promozioni/farmacia-loreto-codice-sconto-del-10-su-app/599191/",
+    "merchantHint": "Farmacia Loreto",
+    "strategy": "structured"
+  },
+  {
+    "id": "source_ponss",
+    "name": "Ponss",
+    "url": "https://www.ponss.it/",
+    "merchantHint": "",
+    "strategy": "fallback"
+  },
+  {
+    "id": "source_unidays",
+    "name": "UNiDAYS",
+    "url": "https://www.myunidays.com/IT/it-IT",
+    "merchantHint": "",
+    "strategy": "skip"
+  },
+  {
+    "id": "source_topnegozi_zalando",
+    "name": "TopNegozi Zalando",
+    "url": "https://www.topnegozi.it/zalando",
+    "merchantHint": "Zalando",
+    "strategy": "structured"
+  },
+  {
+    "id": "source_topnegozi_zalando_prive",
+    "name": "TopNegozi Zalando Prive",
+    "url": "https://www.topnegozi.it/zalando-prive",
+    "merchantHint": "Zalando Prive",
+    "strategy": "skip"
+  },
+  {
+    "id": "source_zalando_prive_official",
+    "name": "Zalando Prive Official",
+    "url": "https://www.zalando-prive.it/codice-sconto-zalando-prive/",
+    "merchantHint": "Zalando Prive",
+    "strategy": "fallback"
+  },
+  {
+    "id": "source_studentbeans_zalando",
+    "name": "Student Beans Zalando",
+    "url": "https://www.studentbeans.com/student-discount/it/zalando",
+    "merchantHint": "Zalando",
+    "strategy": "skip"
+  }
+]

@@ -1,0 +1,157 @@
+{
+  "merchants": [
+    {
+      "id": "merchant_amazon",
+      "name": "Amazon",
+      "slug": "amazon",
+      "domain": "amazon.it",
+      "description": "Coupon Amazon, offerte lampo e promozioni monitorate e ripubblicate con link affiliati.",
+      "logoUrl": "",
+      "isActive": true,
+      "isAffiliateEnabled": true
+    },
+    {
+      "id": "merchant_marketplace",
+      "name": "Marketplace Tech",
+      "slug": "marketplace-tech",
+      "domain": "example-store.test",
+      "description": "Merchant demo per verificare categorie e listing multi-brand.",
+      "logoUrl": "",
+      "isActive": true,
+      "isAffiliateEnabled": false
+    }
+  ],
+  "categories": [
+    {
+      "id": "category_elettronica",
+      "name": "Elettronica",
+      "slug": "elettronica",
+      "description": "Sconti su device, accessori, smart home e periferiche."
+    },
+    {
+      "id": "category_casa",
+      "name": "Casa",
+      "slug": "casa",
+      "description": "Promozioni per cucina, pulizia, arredo e organizzazione."
+    },
+    {
+      "id": "category_prime",
+      "name": "Prime",
+      "slug": "prime",
+      "description": "Coupon e vantaggi riservati agli utenti Prime."
+    }
+  ],
+  "offers": [
+    {
+      "id": "offer_amazon_1",
+      "merchantId": "merchant_amazon",
+      "title": "20% di sconto su accessori smart home",
+      "slug": "20-sconto-accessori-smart-home",
+      "description": "Offerta selezionata su accessori smart home Amazon con coupon applicabile in checkout.",
+      "code": "SMART20",
+      "type": "coupon",
+      "valueLabel": "-20%",
+      "destinationUrl": "https://www.amazon.it/deals",
+      "trackingUrl": "https://www.amazon.it/deals?tag=iltuotag-21",
+      "startsAt": "2026-03-01T08:00:00.000Z",
+      "expiresAt": "2026-03-31T23:59:00.000Z",
+      "isExclusive": true,
+      "status": "published",
+      "sourceId": "source_fixture_amazon",
+      "importedOfferId": "imported_fixture_1",
+      "categoryIds": ["category_elettronica", "category_prime"],
+      "lastVerifiedAt": "2026-03-10T08:00:00.000Z",
+      "createdAt": "2026-03-10T08:00:00.000Z",
+      "updatedAt": "2026-03-10T08:00:00.000Z"
+    },
+    {
+      "id": "offer_marketplace_1",
+      "merchantId": "merchant_marketplace",
+      "title": "Lampade LED in promo a tempo",
+      "slug": "lampade-led-in-promo-a-tempo",
+      "description": "Promozione demo utile per testare listing e card multi-merchant.",
+      "code": "",
+      "type": "deal",
+      "valueLabel": "-15%",
+      "destinationUrl": "https://example-store.test/offers/led",
+      "trackingUrl": "https://example-store.test/offers/led",
+      "startsAt": "2026-03-08T10:00:00.000Z",
+      "expiresAt": "2026-04-01T23:59:00.000Z",
+      "isExclusive": false,
+      "status": "published",
+      "categoryIds": ["category_casa"],
+      "lastVerifiedAt": "2026-03-10T08:00:00.000Z",
+      "createdAt": "2026-03-10T08:00:00.000Z",
+      "updatedAt": "2026-03-10T08:00:00.000Z"
+    }
+  ],
+  "importedOffers": [
+    {
+      "id": "imported_fixture_1",
+      "sourceId": "source_fixture_amazon",
+      "merchantHint": "Amazon",
+      "title": "20% di sconto su accessori smart home",
+      "description": "Import iniziale demo da fonte fixture locale.",
+      "code": "SMART20",
+      "destinationUrl": "https://www.amazon.it/deals",
+      "rawUrl": "https://fixture.local/amazon",
+      "status": "published",
+      "confidenceScore": 0.94,
+      "payloadHash": "fixture-smart20",
+      "detectedAt": "2026-03-10T08:00:00.000Z",
+      "warnings": []
+    },
+    {
+      "id": "imported_queue_1",
+      "sourceId": "source_generic_public",
+      "merchantHint": "Amazon",
+      "title": "10 euro di sconto su piccoli elettrodomestici",
+      "description": "Elemento in review da una fonte pubblica configurabile.",
+      "code": "CASA10",
+      "destinationUrl": "https://www.amazon.it/",
+      "rawUrl": "https://public-source.example/coupon",
+      "status": "review",
+      "confidenceScore": 0.71,
+      "payloadHash": "queue-casa10",
+      "detectedAt": "2026-03-10T08:30:00.000Z",
+      "warnings": ["Verificare la scadenza e la reale validita del coupon."]
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_fixture_amazon",
+      "name": "Fixture Amazon Demo",
+      "kind": "fixture",
+      "baseUrl": "fixture://amazon-demo",
+      "isActive": true,
+      "notes": "Fonte locale usata per avere dati pronti subito in locale."
+    },
+    {
+      "id": "source_generic_public",
+      "name": "Fonte Web Pubblica",
+      "kind": "genericHtml",
+      "baseUrl": "https://example.com",
+      "isActive": false,
+      "notes": "Sostituisci con una fonte pubblica reale prima di lanciare l'import automatico."
+    }
+  ],
+  "importJobs": [
+    {
+      "id": "job_seed_1",
+      "sourceId": "source_fixture_amazon",
+      "status": "completed",
+      "startedAt": "2026-03-10T08:00:00.000Z",
+      "finishedAt": "2026-03-10T08:00:05.000Z",
+      "importedCount": 1,
+      "warningCount": 0
+    }
+  ],
+  "adminUsers": [
+    {
+      "id": "admin_local",
+      "username": "admin",
+      "displayName": "Local Admin",
+      "role": "admin"
+    }
+  ]
+}
