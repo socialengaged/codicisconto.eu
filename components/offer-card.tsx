@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { getExternalLinkRel } from "@/lib/link-rel";
 import { getOfferDisplayDescription, getOfferDisplayTitle } from "@/lib/offer-presenter";
 import type { OfferView } from "@/lib/types";
 import { formatDate } from "@/lib/utils";
@@ -7,8 +9,21 @@ export function OfferCard({ offer }: { offer: OfferView }) {
   return (
     <article className="card offer-card">
       {offer.imageUrl ? (
-        <a href={offer.trackingUrl} target="_blank" rel="noreferrer" className="offer-card__image-link" aria-label={`Vai a ${offer.merchant.name}`}>
-          <img src={offer.imageUrl} alt={getOfferDisplayTitle(offer)} className="offer-card__image" loading="lazy" />
+        <a
+          href={offer.trackingUrl}
+          target="_blank"
+          rel={getExternalLinkRel({ sponsored: true })}
+          className="offer-card__image-link"
+          aria-label={`Vai a ${offer.merchant.name}`}
+        >
+          <Image
+            src={offer.imageUrl}
+            alt={getOfferDisplayTitle(offer)}
+            className="offer-card__image"
+            width={640}
+            height={400}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
         </a>
       ) : null}
       <div className="offer-card__meta">
@@ -31,7 +46,7 @@ export function OfferCard({ offer }: { offer: OfferView }) {
           <Link href={`/coupon/${offer.id}-${offer.slug}`} className="button button-secondary">
             {offer.code ? "Dettaglio codice" : "Dettaglio offerta"}
           </Link>
-          <a href={offer.trackingUrl} className="button" target="_blank" rel="noreferrer">
+          <a href={offer.trackingUrl} className="button" target="_blank" rel={getExternalLinkRel({ sponsored: true })}>
             Vai al sito ufficiale
           </a>
         </div>

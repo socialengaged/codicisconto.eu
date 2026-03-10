@@ -46,7 +46,7 @@ export default async function HomePage() {
             </div>
           </article>
           <aside className="card">
-            <h2>Focus MVP</h2>
+            <h2>Focus sito</h2>
             <div className="list">
               <div>
                 <strong>SEO</strong>

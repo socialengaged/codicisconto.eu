@@ -1,7 +1,9 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/json-ld";
+import { getExternalLinkRel } from "@/lib/link-rel";
 import { getOfferDisplayDescription, getOfferDisplayTitle } from "@/lib/offer-presenter";
 import { absoluteUrl, breadcrumbSchema, offerSchema } from "@/lib/seo";
 import { getOfferBySlug } from "@/lib/store";
@@ -81,7 +83,17 @@ export default async function CouponPage({ params }: CouponPageProps) {
         ]}
       />
       <article className="card hero-card">
-        {offer.imageUrl ? <img src={offer.imageUrl} alt={getOfferDisplayTitle(offer)} className="offer-hero__image" /> : null}
+        {offer.imageUrl ? (
+          <Image
+            src={offer.imageUrl}
+            alt={getOfferDisplayTitle(offer)}
+            className="offer-hero__image"
+            width={1200}
+            height={675}
+            sizes="(max-width: 768px) 100vw, 1120px"
+            priority
+          />
+        ) : null}
         <div className="offer-card__meta">
           <span className="badge badge-primary">{offer.valueLabel}</span>
           <span className="badge">{offer.merchant.name}</span>
@@ -100,7 +112,7 @@ export default async function CouponPage({ params }: CouponPageProps) {
           <div className="card">
             <h2>Azioni rapide</h2>
             <div className="stack">
-              <a href={offer.trackingUrl} className="button" target="_blank" rel="noreferrer">
+              <a href={offer.trackingUrl} className="button" target="_blank" rel={getExternalLinkRel({ sponsored: true })}>
                 {getOfficialCtaLabel(Boolean(offer.code))}
               </a>
               <Link href={`/store/${offer.merchant.slug}`} className="button button-secondary">

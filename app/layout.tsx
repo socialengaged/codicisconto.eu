@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     canonical: "/"
   },
   verification: {
-    google: process.env.GOOGLE_SITE_VERIFICATION,
+    google: process.env.GOOGLE_SITE_VERIFICATION || "YDv5U_ilQXKZhF8YrAXfj2zsZWQjVStSPDhLxmKX_Bw",
     other: process.env.BING_SITE_VERIFICATION
       ? {
           "msvalidate.01": process.env.BING_SITE_VERIFICATION
@@ -77,7 +77,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div className="container">
             <strong>codicisconto.eu</strong>
             <p>
-              MVP locale per aggregare coupon e offerte Amazon con revisione editoriale e tracking affiliato.
+              Portale editoriale dedicato a offerte verificate, pagine merchant e contenuti utili per ricerca,
+              Discover e Google News.
+            </p>
+            <p>
+              I link commerciali e affiliati verso merchant esterni sono pubblicati con attributi SEO dedicati,
+              inclusi `nofollow` e `sponsored` quando applicabile.
             </p>
           </div>
         </footer>

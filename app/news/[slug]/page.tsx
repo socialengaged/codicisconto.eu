@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/lib/editorial";
+import { getExternalLinkRel } from "@/lib/link-rel";
 import { absoluteUrl, articleSchema, breadcrumbSchema } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
 
@@ -87,7 +88,7 @@ export default async function NewsArticlePage({ params }: NewsArticlePageProps) 
           <h2>Fonti e collegamenti</h2>
           <div className="stack">
             {article.sourceUrls.map((url) => (
-              <a key={url} href={url} className="button button-secondary" target="_blank" rel="noreferrer">
+              <a key={url} href={url} className="button button-secondary" target="_blank" rel={getExternalLinkRel()}>
                 Apri fonte
               </a>
             ))}
