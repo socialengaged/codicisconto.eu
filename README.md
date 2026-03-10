@@ -20,6 +20,11 @@ MVP locale di un sito coupon orientato ad Amazon, con:
 - route import: `/api/import/run`
 - sitemap: `/sitemap.xml`
 - robots: `/robots.txt`
+- news sitemap: `/news-sitemap.xml`
+- feed RSS: `/feed.xml`
+- sezione news: `/news`
+- sezione blog: `/blog`
+- generazione bozze editoriali via admin/API
 
 Il progetto usa un archivio locale in `data/store.json` per rendere subito il sito navigabile in locale.
 In parallelo e presente anche `prisma/schema.prisma` per il passaggio a `PostgreSQL` in produzione o in una fase successiva.
@@ -43,6 +48,10 @@ AMAZON_AFFILIATE_TAG=iltuotag-21
 ADMIN_USERNAME=admin
 ADMIN_PASSWORD=changeme
 ADMIN_SESSION_SECRET=metti-una-stringa-lunga-e-casuale
+OPENAI_API_KEY=
+OPENAI_MODEL=gpt-4.1-mini
+GOOGLE_SITE_VERIFICATION=
+BING_SITE_VERIFICATION=
 USE_PRISMA=false
 DATABASE_URL=postgresql://postgres:postgres@localhost:5432/codicisconto_eu?schema=public
 ```
@@ -79,6 +88,9 @@ Controlla questi punti:
 8. Pubblicazione di un elemento importato in coda review.
 9. `http://localhost:3000/sitemap.xml` presente.
 10. `http://localhost:3000/robots.txt` presente.
+11. `http://localhost:3000/news` e `http://localhost:3000/blog` raggiungibili.
+12. `http://localhost:3000/news-sitemap.xml` presente.
+13. `http://localhost:3000/feed.xml` presente.
 
 ## Test produzione-like in locale
 
@@ -156,6 +168,38 @@ Lo script prova a:
 - estrarre blocchi candidati con titolo, codice, valore e scadenza testuale
 
 Le fonti con login obbligatorio o challenge vengono marcate come `skip`.
+
+## SEO e contenuti editoriali
+
+Il progetto include ora:
+
+- metadata piu completi per `Search`, `Discover` e condivisione social
+- JSON-LD per sito, pagine coupon e articoli
+- `news-sitemap.xml` per i contenuti news
+- `feed.xml` editoriale
+- `llms.txt` per agenti e bot AI
+- immagini OG dinamiche per home, news e blog
+
+Workflow:
+
+- news veloci in `/news`
+- guide evergreen in `/blog`
+- bozza AI da `/admin/editorial`
+
+File principali:
+
+- `data/editorial.json`
+- `lib/editorial.ts`
+- `lib/editorial-ai.ts`
+- `docs/seo-editorial-workflow.md`
+
+Per usare l'API OpenAI:
+
+1. inserisci `OPENAI_API_KEY` in `.env.local`
+2. apri `/admin/editorial`
+3. genera una bozza scegliendo topic e offerte sorgente
+
+Se la chiave manca, il sistema crea comunque una bozza locale di fallback.
 
 ## Credenziali admin
 

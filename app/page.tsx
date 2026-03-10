@@ -1,27 +1,47 @@
 import Link from "next/link";
+import { EditorialCard } from "@/components/editorial-card";
+import { JsonLd } from "@/components/json-ld";
 import { OfferCard } from "@/components/offer-card";
+import { getEditorialHomepageSnapshot } from "@/lib/editorial";
+import { absoluteUrl, breadcrumbSchema, collectionPageSchema } from "@/lib/seo";
 import { getHomepageSnapshot } from "@/lib/store";
 
 export default async function HomePage() {
   const { featuredOffers, latestOffers, merchants, categories } = await getHomepageSnapshot();
+  const { latestNews, latestGuides } = await getEditorialHomepageSnapshot();
 
   return (
     <div className="container">
+      <JsonLd
+        data={[
+          breadcrumbSchema([{ name: "Home", url: absoluteUrl("/") }]),
+          collectionPageSchema({
+            title: "codicisconto.eu homepage",
+            description: "Homepage con coupon, offerte, news e guide editoriali.",
+            url: absoluteUrl("/"),
+            itemUrls: [
+              ...latestOffers.map((offer) => absoluteUrl(`/coupon/${offer.id}-${offer.slug}`)),
+              ...latestNews.map((article) => absoluteUrl(`/news/${article.slug}`)),
+              ...latestGuides.map((article) => absoluteUrl(`/blog/${article.slug}`))
+            ]
+          })
+        ]}
+      />
       <section className="hero">
         <div className="hero-grid">
           <article className="card hero-card">
             <span className="badge badge-primary">MVP pronto per il deploy</span>
-            <h1>Coupon Amazon, offerte verificate e link affiliati già pronti.</h1>
+            <h1>Coupon, offerte, news e guide ottimizzati per Search, Discover e merchant SEO.</h1>
             <p>
-              `codicisconto.eu` nasce per aggregare codici sconto da fonti pubbliche, farli passare in revisione
-              editoriale e pubblicarli in pagine SEO pulite.
+              `codicisconto.eu` combina pagine coupon, contenuti editoriali e monitoraggio promozionale per presidiare
+              query commerciali, informative e campagne Amazon.
             </p>
             <div className="hero-actions">
               <Link href="/store/amazon" className="button">
                 Vedi coupon Amazon
               </Link>
-              <Link href="/admin/imports" className="button button-secondary">
-                Gestisci import
+              <Link href="/news" className="button button-secondary">
+                Leggi le news
               </Link>
             </div>
           </article>
@@ -42,6 +62,40 @@ export default async function HomePage() {
               </div>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <div>
+            <h2>Ultime news editoriali</h2>
+            <p className="muted">Contenuti rapidi pensati per campagne, picchi promozionali e Discover.</p>
+          </div>
+          <Link href="/news" className="button button-secondary">
+            Tutte le news
+          </Link>
+        </div>
+        <div className="grid grid-2">
+          {latestNews.map((article) => (
+            <EditorialCard key={article.id} article={article} />
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <div>
+            <h2>Guide e blog post</h2>
+            <p className="muted">Approfondimenti evergreen per rafforzare topical authority e long-tail SEO.</p>
+          </div>
+          <Link href="/blog" className="button button-secondary">
+            Vai al blog
+          </Link>
+        </div>
+        <div className="grid grid-2">
+          {latestGuides.map((article) => (
+            <EditorialCard key={article.id} article={article} />
+          ))}
         </div>
       </section>
 

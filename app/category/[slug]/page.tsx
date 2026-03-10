@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/json-ld";
 import { OfferCard } from "@/components/offer-card";
+import { absoluteUrl, breadcrumbSchema, collectionPageSchema } from "@/lib/seo";
 import { getCategoryBySlug } from "@/lib/store";
 
 interface CategoryPageProps {
@@ -18,8 +20,14 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   return {
     title: `${data.category.name} coupon e sconti`,
     description: data.category.description,
+    keywords: [data.category.name, "coupon", "sconti", "codici promozionali"],
     alternates: {
       canonical: `/category/${data.category.slug}`
+    },
+    openGraph: {
+      title: `${data.category.name} coupon e sconti`,
+      description: data.category.description,
+      url: absoluteUrl(`/category/${data.category.slug}`)
     }
   };
 }
@@ -34,6 +42,20 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   return (
     <div className="container section">
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Home", url: absoluteUrl("/") },
+            { name: data.category.name, url: absoluteUrl(`/category/${data.category.slug}`) }
+          ]),
+          collectionPageSchema({
+            title: `${data.category.name} coupon e sconti`,
+            description: data.category.description,
+            url: absoluteUrl(`/category/${data.category.slug}`),
+            itemUrls: data.offers.map((offer) => absoluteUrl(`/coupon/${offer.id}-${offer.slug}`))
+          })
+        ]}
+      />
       <div className="page-heading">
         <span className="badge badge-primary">Categoria SEO</span>
         <h1>{data.category.name}</h1>

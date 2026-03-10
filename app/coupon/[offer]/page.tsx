@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/json-ld";
+import { absoluteUrl, breadcrumbSchema, offerSchema } from "@/lib/seo";
 import { getOfferBySlug } from "@/lib/store";
 import { formatDate } from "@/lib/utils";
 
@@ -19,8 +21,17 @@ export async function generateMetadata({ params }: CouponPageProps): Promise<Met
   return {
     title: offer.title,
     description: offer.description,
+    keywords: [offer.merchant.name, ...offer.categories.map((item) => item.name), "coupon", "offerta", offer.code || ""].filter(
+      Boolean
+    ),
     alternates: {
       canonical: `/coupon/${offer.id}-${offer.slug}`
+    },
+    openGraph: {
+      type: "website",
+      title: offer.title,
+      description: offer.description,
+      url: absoluteUrl(`/coupon/${offer.id}-${offer.slug}`)
     }
   };
 }
@@ -35,6 +46,16 @@ export default async function CouponPage({ params }: CouponPageProps) {
 
   return (
     <div className="container section">
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Home", url: absoluteUrl("/") },
+            { name: offer.merchant.name, url: absoluteUrl(`/store/${offer.merchant.slug}`) },
+            { name: offer.title, url: absoluteUrl(`/coupon/${offer.id}-${offer.slug}`) }
+          ]),
+          offerSchema(offer)
+        ]}
+      />
       <article className="card hero-card">
         <div className="offer-card__meta">
           <span className="badge badge-primary">{offer.valueLabel}</span>

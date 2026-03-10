@@ -10,6 +10,7 @@ export function AdminShell({ title, children }: { title: string; children: React
           <Link href="/admin">Dashboard</Link>
           <Link href="/admin/offers">Offerte</Link>
           <Link href="/admin/imports">Import</Link>
+          <Link href="/admin/editorial">Editoriale</Link>
           <form action="/api/admin/logout" method="post">
             <button type="submit" className="button button-secondary full-width">
               Logout

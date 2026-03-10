@@ -10,6 +10,8 @@ export function SiteHeader() {
         <nav className="nav-links" aria-label="Navigazione principale">
           <Link href="/">Home</Link>
           <Link href="/store/amazon">Amazon</Link>
+          <Link href="/news">News</Link>
+          <Link href="/blog">Blog</Link>
           <Link href="/search">Cerca</Link>
           <Link href="/admin">Admin</Link>
         </nav>

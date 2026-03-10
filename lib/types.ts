@@ -2,6 +2,8 @@ export type OfferStatus = "draft" | "review" | "published" | "expired" | "reject
 export type OfferType = "coupon" | "deal";
 export type SourceKind = "genericHtml" | "fixture";
 export type ImportJobStatus = "idle" | "running" | "completed" | "failed";
+export type EditorialArticleType = "news" | "blog";
+export type EditorialArticleStatus = "draft" | "published";
 
 export interface Merchant {
   id: string;
@@ -104,4 +106,26 @@ export interface OfferView extends Offer {
 
 export interface ImportedOfferView extends ImportedOffer {
   source: Source;
+}
+
+export interface EditorialArticle {
+  id: string;
+  slug: string;
+  type: EditorialArticleType;
+  status: EditorialArticleStatus;
+  title: string;
+  excerpt: string;
+  content: string[];
+  coverImage: string;
+  tags: string[];
+  topic: string;
+  sourceOfferIds: string[];
+  sourceUrls: string[];
+  authorName: string;
+  publishedAt: string;
+  updatedAt: string;
+}
+
+export interface EditorialStore {
+  articles: EditorialArticle[];
 }

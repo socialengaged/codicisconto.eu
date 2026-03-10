@@ -1,0 +1,67 @@
+{
+  "articles": [
+    {
+      "id": "article_news_amazon_marzo",
+      "slug": "amazon-coupon-marzo-offerte-smart-home",
+      "type": "news",
+      "status": "published",
+      "title": "Amazon rilancia i coupon di marzo con focus smart home e accessori con sconti fino al 20%",
+      "excerpt": "Panoramica delle promozioni Amazon più interessanti del momento, con attenzione a coupon applicabili, categorie attive e segnali utili per chi monitora il Prime e la smart home.",
+      "content": [
+        "Amazon continua a spingere le offerte legate alla smart home e agli accessori domestici con campagne a tempo che combinano coupon manuali e sconti automatici nel carrello. In questa fase i segnali più utili arrivano dai prodotti compatibili con le promozioni Smart20 e da bundle stagionali su dispositivi per la casa connessa.",
+        "Per chi osserva il mercato coupon in ottica editoriale, il dato interessante non è solo il valore nominale dello sconto, ma la frequenza con cui le promozioni si ripresentano in categorie chiave come sicurezza domestica, illuminazione e piccoli elettrodomestici. Queste campagne tendono a performare bene sia in Search sia in contenuti aggiornati utili per Discover.",
+        "Nel breve periodo conviene presidiare le pagine store Amazon, i coupon di categoria e le offerte editoriali che spiegano condizioni, scadenze e contesto promozionale. Questo approccio aiuta a costruire pagine utili sia per l'utente finale sia per i motori di ricerca che premiano contenuti chiari e aggiornati."
+      ],
+      "coverImage": "/news/amazon-coupon-marzo-offerte-smart-home/opengraph-image",
+      "tags": ["amazon", "coupon", "smart home", "prime"],
+      "topic": "Analisi promozioni Amazon di marzo",
+      "sourceOfferIds": ["offer_amazon_1"],
+      "sourceUrls": ["https://www.amazon.it/deals"],
+      "authorName": "Redazione codicisconto.eu",
+      "publishedAt": "2026-03-10T09:00:00.000Z",
+      "updatedAt": "2026-03-10T09:00:00.000Z"
+    },
+    {
+      "id": "article_blog_coupon_strategy",
+      "slug": "come-leggere-codici-sconto-offerte-e-coupon-amazon",
+      "type": "blog",
+      "status": "published",
+      "title": "Come leggere codici sconto, offerte e coupon Amazon senza perdere le promozioni davvero utili",
+      "excerpt": "Guida pratica per distinguere coupon reali, offerte automatiche a carrello, promo Prime e campagne temporanee che meritano attenzione editoriale.",
+      "content": [
+        "Non tutte le promozioni Amazon funzionano allo stesso modo. Alcune richiedono un codice da inserire nel checkout, altre si attivano direttamente nella pagina prodotto e altre ancora vengono applicate solo se l'utente rispetta una soglia minima di spesa o appartiene a un segmento specifico come Prime o Prime Student.",
+        "Per questo motivo una strategia editoriale efficace non si limita a copiare il titolo di uno sconto: deve spiegare tipo di promo, condizioni, data di verifica, eventuale scadenza e contesto di utilizzo. Sono questi elementi che aumentano la qualità percepita del contenuto e aiutano il posizionamento organico.",
+        "Nel lavoro quotidiano conviene separare i contenuti evergreen, come le guide su come usare un coupon Amazon, dai contenuti news legati a promozioni temporanee. Questa distinzione rende più semplice organizzare sitemap, feed editoriali e aggiornamenti per Search, Discover e Google News."
+      ],
+      "coverImage": "/blog/come-leggere-codici-sconto-offerte-e-coupon-amazon/opengraph-image",
+      "tags": ["guida", "coupon", "amazon", "seo editoriale"],
+      "topic": "Guida ai coupon Amazon",
+      "sourceOfferIds": ["offer_amazon_1"],
+      "sourceUrls": ["https://www.amazon.it/deals"],
+      "authorName": "Redazione codicisconto.eu",
+      "publishedAt": "2026-03-10T10:30:00.000Z",
+      "updatedAt": "2026-03-10T10:30:00.000Z"
+    },
+    {
+      "id": "article_news_category_home",
+      "slug": "coupon-casa-promozioni-piu-monitorate-della-settimana",
+      "type": "news",
+      "status": "published",
+      "title": "Coupon casa: le promozioni più monitorate della settimana tra Amazon e marketplace selezionati",
+      "excerpt": "Una sintesi editoriale delle offerte casa più osservate, utile per presidiare query informative e commerciali insieme.",
+      "content": [
+        "Le offerte casa restano tra le più interessanti per un sito coupon che punta a intercettare traffico misto tra query informative e transazionali. In questo momento la categoria mostra un buon equilibrio tra promozioni percentuali, offerte dirette e campagne con scadenza esplicita.",
+        "Lato SEO conviene creare contenuti che non si limitino alla lista nuda dei codici, ma che spieghino trend e vantaggi concreti: prodotti inclusi, finestre promozionali, livelli di sconto, soglie minime e presenza di eventuali programmi fedeltà o abbonamenti collegati.",
+        "Questo tipo di articolo aiuta a rafforzare l'autorità tematica del progetto e a collegare meglio homepage, pagine categoria e pagine merchant, aumentando la rilevanza semantica complessiva del sito."
+      ],
+      "coverImage": "/news/coupon-casa-promozioni-piu-monitorate-della-settimana/opengraph-image",
+      "tags": ["casa", "coupon", "offerte", "marketplace"],
+      "topic": "Trend offerte casa",
+      "sourceOfferIds": ["offer_marketplace_1", "offer_amazon_1"],
+      "sourceUrls": ["https://example-store.test/offers/led", "https://www.amazon.it/deals"],
+      "authorName": "Redazione codicisconto.eu",
+      "publishedAt": "2026-03-10T11:00:00.000Z",
+      "updatedAt": "2026-03-10T11:00:00.000Z"
+    }
+  ]
+}
